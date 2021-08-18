@@ -35,7 +35,7 @@ const App = () => {
   {
     // console.log(data);
     setlist((prevValue)=>{
-      return [data,...prevValue]
+      return [data,...prevValue,]
     })
     console.log(listss);
   }
