@@ -4,7 +4,7 @@ import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 
 
-const expenses = [
+const expenseses = [
   {
     id: 'e1',
     title: 'Toilet Paper',
@@ -29,34 +29,21 @@ const expenses = [
 
 const App = () => {
 
-  
-  const [list,setlist]=useState([
-    ...expenses
-  ])
-
-
-  // return React.createElement(
-  //   'div',
-  //   {},
-  //   React.createElement('h2', {}, "Let's get started!"),
-  //   React.createElement(Expenses, { items: expenses })
-  // );
+  const [listss,setlist]=useState(expenseses);
 
   function handledataapp(data)
   {
-    console.log(data);
+    // console.log(data);
     setlist((prevValue)=>{
-      return ({
-        ...prevValue,
-        ...data
-      })
+      return [data,...prevValue]
     })
+    console.log(listss);
   }
 
   return (
     <div>
       <NewExpense datainapp={handledataapp} />
-      <Expenses items={list} />
+      <Expenses items={listss} />
     </div>
   );
 }
