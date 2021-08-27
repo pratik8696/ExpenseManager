@@ -1,8 +1,6 @@
-import React,{useState} from 'react';
-
+import React, { useState } from 'react';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
-
 
 const expenseses = [
   {
@@ -11,7 +9,12 @@ const expenseses = [
     amount: 94.12,
     date: new Date(2020, 7, 14),
   },
-  { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+  {
+    id: 'e2',
+    title: 'New TV',
+    amount: 799.49,
+    date: new Date(2021, 2, 12)
+  },
   {
     id: 'e3',
     title: 'Car Insurance',
@@ -29,14 +32,13 @@ const expenseses = [
 
 const App = () => {
 
-  const [listss,setlist]=useState(expenseses);
+  const [listss, setlist] = useState(expenseses);
 
-  function handledataapp(data)
-  {
+  function handledataapp(data) {
     // console.log(data);
-    setlist((prevValue)=>{
-      return [data,...prevValue,]
-    })
+    setlist((prevValue) => {
+      return [data, ...prevValue,]
+    });
     console.log(listss);
   }
 

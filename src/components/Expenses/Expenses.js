@@ -5,11 +5,14 @@ import './Expenses.css';
 import ExpensesFilter from './ExpensesFilter';
 
 const Expenses = (props) => {
+
   const [year,selectedyear]=useState("2020");
+  
   function handlechange(data)
   {
     selectedyear(data);
   }
+
   return (
     <Card className="expenses">
 
@@ -17,15 +20,17 @@ const Expenses = (props) => {
       
       {props.items.map((data)=>{
         return (<ExpenseItem
-        key={data.id}
+          key={data.id}
           title={data.title}
           amount={data.amount}
           date={data.date}
         />);
       })}
-
+      
     </Card>
+
   );
+  
 }
 
 export default Expenses;
